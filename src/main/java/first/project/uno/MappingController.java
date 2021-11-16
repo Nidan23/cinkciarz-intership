@@ -3,6 +3,8 @@ package first.project.uno;
 import org.apache.catalina.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class MappingController {
     private final CrudService crud;
@@ -18,8 +20,8 @@ public class MappingController {
     }
 
     @GetMapping("/users")
-    public String getUser(){
-        return "User returned";
+    public List<UserEntity> getUser(){
+        return crud.getUser();
     }
 
     @PatchMapping(path = "/users/{id}", consumes = "application/json")
