@@ -1,7 +1,6 @@
 package first.project.uno;
 
-import org.springframework.http.MediaType;
-import org.springframework.web.HttpMediaTypeNotAcceptableException;
+import org.apache.catalina.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,6 +17,11 @@ public class MappingController {
         return "\nUser added\n";
     }
 
+    @GetMapping("/users")
+    public String getUser(){
+        return "User returned";
+    }
+
     @PatchMapping(path = "/users/{id}", consumes = "application/json")
     public String updateUser(@RequestBody UserEntity user, @PathVariable("id") Long id){
         crud.updateUser(user, id);
@@ -28,11 +32,6 @@ public class MappingController {
     public String deleteUser(@PathVariable("id") Long id) {
         crud.deleteUser(id);
         return "\nUser deleted\n";
-    }
-    @ResponseBody
-    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-    public String handleHttpMediaTypeNotAcceptableException() {
-        return "acceptable MIME type:" + MediaType.APPLICATION_JSON_VALUE;
     }
 
 }
