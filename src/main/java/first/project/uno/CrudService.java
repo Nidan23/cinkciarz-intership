@@ -3,6 +3,8 @@ package first.project.uno;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Service
 public class CrudService{
     private final UserRepo repo;
@@ -26,6 +28,10 @@ public class CrudService{
 
     public void deleteUser(Long id){
         this.repo.deleteById(id);
+    }
+
+    public List<UserEntity> getUser(){
+       return (List<UserEntity>) repo.findAll();
     }
 }
 

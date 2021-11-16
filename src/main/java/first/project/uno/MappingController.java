@@ -1,11 +1,9 @@
 package first.project.uno;
 
-<<<<<<< HEAD
 import org.springframework.http.MediaType;
-=======
-import org.apache.catalina.User;
->>>>>>> 2.1
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class MappingController {
@@ -22,8 +20,8 @@ public class MappingController {
     }
 
     @GetMapping("/users")
-    public String getUser(){
-        return "User returned";
+    public List<UserEntity> getUser(){
+        return crud.getUser();
     }
 
     @PatchMapping(path = "/users/{id}", consumes = "application/json")
