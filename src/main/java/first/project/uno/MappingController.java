@@ -1,6 +1,7 @@
 package first.project.uno;
 
 import org.springframework.http.MediaType;
+import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,6 +28,11 @@ public class MappingController {
     public String deleteUser(@PathVariable("id") Long id) {
         crud.deleteUser(id);
         return "\nUser deleted\n";
+    }
+    @ResponseBody
+    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
+    public String handleHttpMediaTypeNotAcceptableException() {
+        return "acceptable MIME type:" + MediaType.APPLICATION_JSON_VALUE;
     }
 
 }
