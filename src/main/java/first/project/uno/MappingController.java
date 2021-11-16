@@ -1,6 +1,10 @@
 package first.project.uno;
 
+<<<<<<< HEAD
 import org.springframework.http.MediaType;
+=======
+import org.apache.catalina.User;
+>>>>>>> 2.1
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,6 +19,11 @@ public class MappingController {
     public String addUser(@RequestBody UserEntity user){
         crud.addUser(user);
         return "\nUser added\n";
+    }
+
+    @GetMapping("/users")
+    public String getUser(){
+        return "User returned";
     }
 
     @PatchMapping(path = "/users/{id}", consumes = "application/json")
