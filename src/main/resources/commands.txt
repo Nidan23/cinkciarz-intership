@@ -1,0 +1,3 @@
+curl -X POST localhost:8080/users -H 'Content-type:application/json' -d '{"firstName": "Jakub", "lastName": "Sul", "country": "Poland", "city": "Warsaw", "street": "High Street", "area": "+48", "number": "723421"}'
+curl -X DELETE localhost:8080/users/1
+curl -X PATCH localhost:8080/users/2 -H 'Content-type:application/json' -d '{"firstName": "Hans", "lastName": "Zimmler", "country": "Germany", "city": "Berlin", "street": "Student Street", "area": "+45", "number": "723421"}'
