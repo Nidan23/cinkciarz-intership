@@ -1,7 +1,9 @@
 package pl.cinkciarz.sulkowski.users.controller;
 
 import org.springframework.stereotype.Service;
-import pl.cinkciarz.sulkowski.users.endpoint.UserDataTransfer;
+import pl.cinkciarz.sulkowski.users.datatypes.Address;
+import pl.cinkciarz.sulkowski.users.datatypes.Phone;
+import pl.cinkciarz.sulkowski.users.endpoint.UserDTO;
 import pl.cinkciarz.sulkowski.users.repository.User;
 import pl.cinkciarz.sulkowski.users.repository.UserRepository;
 
@@ -16,17 +18,30 @@ public class UserService {
         this.repository = repository;
     }
 
-    public void addUser(UserDataTransfer userDataTransfer) {
-        User user = new User(userDataTransfer.getFirstName(), userDataTransfer.getLastName(), userDataTransfer.getAddress(), userDataTransfer.getNumber());
+    public void addUser(UserDTO userDTO) {
+        String firstName = userDTO.getFirstName();
+        String lastName = userDTO.getLastName();
+        Phone phone = userDTO.getPhone();
+        Address address = userDTO.getAddress();
+
+        User user = new User(firstName, lastName, address, phone);
+
         this.repository.save(user);
     }
 
-    public void updateUser(UserDataTransfer userDataTransfer, Long id) {
+    public void updateUser(UserDTO userDTO, Long id) {
+        String firstName = userDTO.getFirstName();
+        String lastName = userDTO.getLastName();
+        Phone phone = userDTO.getPhone();
+        Address address = userDTO.getAddress();
+
         User user = repository.findById(id).get();
-        user.setFirstName(userDataTransfer.getFirstName());
-        user.setLastName(userDataTransfer.getLastName());
-        user.setAddress(userDataTransfer.getAddress());
-        user.setPhoneNumber(userDataTransfer.getNumber());
+
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPhone(phone);
+        user.setAddress(address);
+
         repository.save(user);
     }
 

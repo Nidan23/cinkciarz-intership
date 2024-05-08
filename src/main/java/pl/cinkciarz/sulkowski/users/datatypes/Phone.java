@@ -1,37 +1,21 @@
 package pl.cinkciarz.sulkowski.users.datatypes;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Embeddable;
 
+@Getter
+@Setter
 @Embeddable
 public class Phone {
     private String area;
     private String number;
 
-    protected Phone() {
-    }
+    protected Phone() {}
 
     public Phone(String area, String number) {
         this.area = area;
         this.number = number;
     }
-
-
-
-    public void setArea(String area) {
-        this.area = area;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-
-    public String getNumber() {
-        return number;
-    }
-
-    public String getArea() {
-        return area;
-    }
-
 }
