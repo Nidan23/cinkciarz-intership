@@ -1,0 +1,18 @@
+###
+
+# curl -X PATCH localhost:8080/users/2 -H 'Content-type:application/json' -d '{"firstName": "Hans", "lastName": "Zimmler", "country": "Germany", "city": "Berlin", "street": "Student Street", "area": "+45", "number": "723421"}'
+PATCH localhost:8080/users/2
+Content-Type: application/json
+
+{
+  "firstName": "Hans",
+  "lastName": "Zimmler",
+  "country": "Germany",
+  "city": "Berlin",
+  "street": "Student Street",
+  "area": "+45",
+  "number": "723421"
+}
+
+###
+

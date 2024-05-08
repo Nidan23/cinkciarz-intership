@@ -1,15 +1,19 @@
 package pl.cinkciarz.sulkowski.users.datatypes;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Embeddable;
 
+@Getter
+@Setter
 @Embeddable
 public class Address {
     private String country;
     private String city;
     private String street;
 
-    protected Address() {
-    }
+    protected Address() {}
 
     public Address(String country, String city, String street) {
         this.country = country;
@@ -17,27 +21,4 @@ public class Address {
         this.street = street;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
 }

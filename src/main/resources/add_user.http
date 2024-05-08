@@ -1,0 +1,16 @@
+# curl -X POST localhost:8080/users -H 'Content-type:application/json' -d '{"firstName": "Jakub", "lastName": "Sul", "country": "Poland", "city": "Warsaw", "street": "High Street", "area": "+48", "number": "723421"}'
+POST localhost:8080/users
+Content-Type: application/json
+
+{
+  "firstName": "Jakub",
+  "lastName": "Sul",
+  "country": "Poland",
+  "city": "Warsaw",
+  "street": "High Street",
+  "area": "+48",
+  "number": "723421"
+}
+
+###
+
