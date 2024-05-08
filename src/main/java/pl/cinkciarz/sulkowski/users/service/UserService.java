@@ -1,9 +1,9 @@
-package pl.cinkciarz.sulkowski.users.controller;
+package pl.cinkciarz.sulkowski.users.service;
 
 import org.springframework.stereotype.Service;
 import pl.cinkciarz.sulkowski.users.datatypes.Address;
 import pl.cinkciarz.sulkowski.users.datatypes.Phone;
-import pl.cinkciarz.sulkowski.users.endpoint.UserDTO;
+import pl.cinkciarz.sulkowski.users.model.UserDTO;
 import pl.cinkciarz.sulkowski.users.repository.User;
 import pl.cinkciarz.sulkowski.users.repository.UserRepository;
 

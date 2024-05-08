@@ -1,7 +1,8 @@
 package pl.cinkciarz.sulkowski.users.endpoint;
 
 import org.springframework.web.bind.annotation.*;
-import pl.cinkciarz.sulkowski.users.controller.UserService;
+import pl.cinkciarz.sulkowski.users.model.UserDTO;
+import pl.cinkciarz.sulkowski.users.service.UserService;
 import pl.cinkciarz.sulkowski.users.repository.User;
 
 import java.util.List;

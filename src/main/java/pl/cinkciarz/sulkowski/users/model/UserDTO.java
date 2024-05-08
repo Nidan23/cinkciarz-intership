@@ -1,7 +1,6 @@
-package pl.cinkciarz.sulkowski.users.endpoint;
+package pl.cinkciarz.sulkowski.users.model;
 
 import lombok.Getter;
-import lombok.Setter;
 import pl.cinkciarz.sulkowski.users.datatypes.Address;
 import pl.cinkciarz.sulkowski.users.datatypes.Phone;
 
